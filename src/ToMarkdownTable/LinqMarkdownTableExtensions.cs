@@ -28,7 +28,28 @@ namespace System.Linq
             var columnNames = gettables.Select(p => p.Name);
 
             var headerLine = "| " + string.Join(" | ", columnNames.Select((n, i) => n.PadRight(maxColumnValues[i]))) + " |";
-            var headerDataDividerLine = "| " + string.Join(" | ", gettables.Select((n, i) => new string('-', maxColumnValues[i]))) + " |";
+
+            var isNumeric = new Func<Type, bool>(type => 
+                type == typeof(Byte) ||
+                type == typeof(SByte) ||
+                type == typeof(UInt16) ||
+                type == typeof(UInt32) ||
+                type == typeof(UInt64) ||
+                type == typeof(Int16) ||
+                type == typeof(Int32) ||
+                type == typeof(Int64) ||
+                type == typeof(Decimal) ||
+                type == typeof(Double) ||
+                type == typeof(Single));
+
+            var rightAlign = new Func<Type, char>(type => isNumeric(type) ? ':' : ' ');
+
+            var headerDataDividerLine = 
+                "| " +
+                 string.Join(
+                     "| ", 
+                     gettables.Select((g, i) => new string('-', maxColumnValues[i]) + rightAlign(g.Type))) + 
+                "|";
 
             var lines = new[]
                 {
