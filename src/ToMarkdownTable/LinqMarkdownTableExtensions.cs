@@ -15,8 +15,7 @@ namespace System.Linq
 
             var gettables = Enumerable.Union(
                 properties.Select(p => new { p.Name, GetValue = (Func<object, object>)p.GetValue, Type = p.PropertyType }),
-                fields.Select(p => new { p.Name, GetValue = (Func<object, object>)p.GetValue, Type = p.FieldType }))
-                .OrderBy(g => g.Name);
+                fields.Select(p => new { p.Name, GetValue = (Func<object, object>)p.GetValue, Type = p.FieldType }));
 
             var maxColumnValues = source
                 .Select(x => gettables.Select(p => p.GetValue(x)?.ToString()?.Length ?? 0))
