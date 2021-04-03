@@ -4,16 +4,20 @@
     <Description>Extension method for generating text output in Markdown table format.</Description>
     <PackageProjectUrl>https://github.com/jpierson/to-markdown-table</PackageProjectUrl>
     <ApplicationIcon>table.ico</ApplicationIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/jpierson/to-markdown-table/develop/src/ToMarkdownTable/table.ico</PackageIconUrl>
+    <PackageIcon>table.ico</PackageIcon>
     <RepositoryUrl>https://github.com/jpierson/to-markdown-table</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>markdown, linq, format</PackageTags>
     <Copyright></Copyright>
-    <PackageLicenseUrl>https://github.com/jpierson/to-markdown-table/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyVersion>0.2.0.0</AssemblyVersion>
     <FileVersion>0.2.0.0</FileVersion>
     <Version>0.2.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>jpierson</Company>
   </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="table.ico" Pack="true" PackagePath=""/>
+  </ItemGroup>
 </Project>
