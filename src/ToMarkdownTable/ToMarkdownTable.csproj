@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.2</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Description>Extension method for generating text output in Markdown table format.</Description>
     <PackageProjectUrl>https://github.com/jpierson/to-markdown-table</PackageProjectUrl>
     <ApplicationIcon>table.ico</ApplicationIcon>
